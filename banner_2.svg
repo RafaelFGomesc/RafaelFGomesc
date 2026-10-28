@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#0b1a33"/>
+    </linearGradient>
+    <linearGradient id="name" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#58a6ff"/>
+      <stop offset="0.5" stop-color="#a5d6ff"/>
+      <stop offset="1" stop-color="#7ee787"/>
+      <animateTransform attributeName="gradientTransform" type="translate" values="-0.4 0;0.4 0;-0.4 0" dur="6s" repeatCount="indefinite"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#1f6feb" stroke-opacity="0.08" stroke-width="1"/>
+    </pattern>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="50"/></filter>
+    <clipPath id="win"><rect x="40" y="30" width="1120" height="260" rx="14"/></clipPath>
+    <style>
+      .mono { font-family: 'Fira Code','JetBrains Mono',Consolas,'Courier New',monospace; }
+      .sans { font-family: 'Segoe UI','Inter',Helvetica,Arial,sans-serif; }
+      .cursor { animation: blink 1s steps(1) infinite; }
+      @keyframes blink { 50% { opacity: 0; } }
+      .fade1 { opacity: 0; animation: fade .6s ease-out .3s forwards; }
+      .fade2 { opacity: 0; animation: fade .8s ease-out .9s forwards; }
+      .fade3 { opacity: 0; animation: fade .8s ease-out 1.5s forwards; }
+      @keyframes fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+      .glow { animation: glow 4s ease-in-out infinite; }
+      @keyframes glow { 0%,100% { opacity: .35; } 50% { opacity: .7; } }
+    </style>
+  </defs>
+
+  <rect width="1200" height="320" fill="#0d1117"/>
+
+  <!-- janela de terminal -->
+  <g clip-path="url(#win)">
+    <rect x="40" y="30" width="1120" height="260" fill="url(#bg)"/>
+    <rect x="40" y="30" width="1120" height="260" fill="url(#grid)"/>
+    <circle class="glow" cx="1040" cy="90" r="160" fill="#1f6feb" opacity=".4" filter="url(#blur)"/>
+    <rect x="40" y="30" width="1120" height="40" fill="#161b22"/>
+  </g>
+  <rect x="40.5" y="30.5" width="1119" height="259" rx="14" fill="none" stroke="#30363d"/>
+
+  <circle cx="68" cy="50" r="7" fill="#ff5f56"/>
+  <circle cx="92" cy="50" r="7" fill="#ffbd2e"/>
+  <circle cx="116" cy="50" r="7" fill="#27c93f"/>
+  <text x="600" y="55" text-anchor="middle" class="mono" font-size="14" fill="#8b949e">rafael@recife: ~</text>
+
+  <!-- comando -->
+  <text x="80" y="115" class="mono fade1" font-size="22" fill="#8b949e"><tspan fill="#7ee787">$</tspan> <tspan fill="#58a6ff">~</tspan> whoami</text>
+
+  <!-- nome -->
+  <text x="78" y="195" class="sans fade2" font-size="76" font-weight="800" letter-spacing="-1" fill="url(#name)">Rafael Gomes</text>
+
+  <!-- subtítulo -->
+  <text x="80" y="245" class="mono fade3" font-size="22" fill="#c9d1d9"><tspan fill="#ff7b72">&lt;/&gt;</tspan> back-end developer <tspan fill="#8b949e">•</tspan> product mindset <tspan class="cursor" fill="#58a6ff" font-weight="700">_</tspan></text>
+
+  <!-- detalhe de código à direita -->
+  <g class="mono fade3" font-size="15" fill="#8b949e" opacity=".9">
+    <text x="830" y="125"><tspan fill="#ff7b72">const</tspan> <tspan fill="#d2a8ff">dev</tspan> = {</text>
+    <text x="850" y="150">stack: [<tspan fill="#a5d6ff">"C#"</tspan>, <tspan fill="#a5d6ff">"Python"</tspan>],</text>
+    <text x="850" y="175">focus: <tspan fill="#a5d6ff">"back-end"</tspan>,</text>
+    <text x="850" y="200">loves: <tspan fill="#a5d6ff">"products"</tspan></text>
+    <text x="830" y="225">};</text>
+  </g>
+</svg>
